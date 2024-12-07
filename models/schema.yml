@@ -5,35 +5,35 @@ sources:
     tables:
       - name: product
         identifier: raw_gz_product
-        description: products of Greenweez
+        description: Products of Greenweez
         columns:
           - name: products_id
-            description: the id of products
+            description: The ID of products
             tests:
               - unique
               - not_null
           - name: purchase_price
-            description: the price of the product purchase
+            description: The price of the product purchase
       - name: sales
         identifier: raw_gz_sales
-        description: sales of Greenweez / we have on row per product_id found in each orders_id
+        description: Sales of Greenweez / one row per product_id found in each orders_id
         columns:
           - name: date_date
-            description: date of purchase
+            description: Date of purchase
           - name: orders_id
-            description: the id of orders
+            description: The ID of orders
             tests:
               - unique
               - not_null
           - name: product_id
-            description: the id of products
+            description: The ID of products
             tests:
               - unique
               - not_null
           - name: revenue
-            description: revenue generated
+            description: Revenue generated
           - name: quantity
-            description: quantity of products
+            description: Quantity of products
       - name: ship
         identifier: raw_gz_ship
         description: Infos about expeditions
@@ -44,7 +44,7 @@ sources:
               - unique
               - not_null
           - name: final_shipping_fee
-            description: C'est quoi déjà?
+            description: Final shipping fee (renamed to avoid hyphen issues)
           - name: log_cost
             description: Logistic cost related to the shipment
           - name: ship_cost
