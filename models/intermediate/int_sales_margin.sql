@@ -1,4 +1,5 @@
 select
+    s.date_date,
     s.orders_id,
     s.products_id,
     s.quantity,
