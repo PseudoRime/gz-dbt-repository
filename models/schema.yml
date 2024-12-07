@@ -29,7 +29,7 @@ sources:
             description: the id of products
             tests:
               - unique
-              - not null
+              - not_null
           - name: revenue
             description: revenue generated
           - name: quantity
@@ -43,7 +43,7 @@ sources:
             tests:
               - unique
               - not_null
-          - name: final-shipping-fee
+          - name: final_shipping_fee
             description: C'est quoi déjà?
           - name: log_cost
             description: Logistic cost related to the shipment
