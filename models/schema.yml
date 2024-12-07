@@ -28,6 +28,9 @@ sources:
             description: Revenue generated
           - name: quantity
             description: Quantity of products
+            tests:
+            - unique:
+              column_name: "CONCAT(CAST(orders_id AS STRING), '-', CAST(product_id AS STRING))"
       - name: ship
         identifier: raw_gz_ship
         description: Infos about expeditions
