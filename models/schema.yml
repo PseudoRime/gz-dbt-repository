@@ -20,15 +20,15 @@ sources:
         columns:
           - name: orders_id
             description: The ID of orders
-          - name: product_id
+          - name: pdt_id
             description: The ID of products
           - name: revenue
             description: Revenue generated
           - name: quantity
             description: Quantity of products
         tests:
-          - unique:
-              column_name: "CONCAT(CAST(orders_id AS STRING), '-', CAST(product_id AS STRING))"
+           - unique:
+              column_name: "(orders_id || '-' || pdt_id)"
       - name: ship
         identifier: raw_gz_ship
         description: Infos about expeditions
