@@ -9,6 +9,9 @@ sources:
         columns:
           - name: products_id
             description: the id of products
+            tests:
+              - unique
+              - not_null
           - name: purchase_price
             description: the price of the product purchase
       - name: sales
@@ -19,8 +22,14 @@ sources:
             description: date of purchase
           - name: orders_id
             description: the id of orders
+            tests:
+              - unique
+              - not_null
           - name: product_id
             description: the id of products
+            tests:
+              - unique
+              - not null
           - name: revenue
             description: revenue generated
           - name: quantity
@@ -31,6 +40,9 @@ sources:
         columns:
           - name: orders_id
             description: Unique identifier for the order
+            tests:
+              - unique
+              - not_null
           - name: final-shipping-fee
             description: C'est quoi déjà?
           - name: log_cost
