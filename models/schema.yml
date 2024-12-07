@@ -17,9 +17,8 @@ sources:
       - name: sales
         identifier: raw_gz_sales
         description: Sales of Greenweez / one row per product_id found in each orders_id
+        tests: []
         columns:
-          - name: date_date
-            description: Date of purchase
           - name: orders_id
             description: The ID of orders
           - name: product_id
@@ -29,8 +28,8 @@ sources:
           - name: quantity
             description: Quantity of products
             tests:
-            - unique:
-              column_name: "CONCAT(CAST(orders_id AS STRING), '-', CAST(product_id AS STRING))"
+              - unique:
+                column_name: "CONCAT(CAST(orders_id AS STRING), '-', CAST(product_id AS STRING))"
       - name: ship
         identifier: raw_gz_ship
         description: Infos about expeditions
