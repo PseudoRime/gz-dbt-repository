@@ -1,6 +1,7 @@
 select 
     s.orders_id, 
     s.margin,
+    purchase_cost,
     ROUND(s.margin + p.final_shipping_fee - p.logcost - p.ship_cost, 2) AS operational_margin
 from {{ ref('int_order_margin') }} s
 left join (
