@@ -9,6 +9,10 @@ sources:
         description: >-
           Sales data for Greenweez. Each row represents a product
           in an order.
+        # Freshness testing
+        loaded_at_field: "CAST(date_date AS TIMESTAMP)"
+        freshness:
+          warn_after: {count: 90, period: day}     
         columns:
           - name: date_date
             description: Date of purchase.
